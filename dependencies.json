@@ -1,0 +1,13 @@
+{
+  "react-native-animatable": "latest",
+  "axios": "latest",
+  "native-base": "latest",
+  "react-native-easy-grid": "latest",
+  "react-native-gesture-handler": "latest",
+  "react-native-reanimated": "latest",
+  "react-native-router-flux": "latest",
+  "react-native-safe-area-context": "latest",
+  "react-native-screens": "latest",
+  "react-native-typography": "latest",
+  "react-native-vector-icons": "latest"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "react-native-template-igortice-rnta",
+  "version": "0.0.3",
+  "description": "Template A para projetos em React Native, com Estrutura de Pastas customizada",
+  "keywords": [
+    "react-native",
+    "template",
+    "axios",
+    "redux",
+    "native-base"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/igortice/react-native-template-igortice-rnta.git"
+  },
+  "homepage": "https://github.com/igortice/react-native-template-igortice-rnta#readme",
+  "author": "Igor Rocha <igortice@gmail.com>",
+  "license": "MIT"
+}
