@@ -1,6 +1,8 @@
 import React from 'react';
 import * as Animatable from 'react-native-animatable';
 import {Row, Grid} from 'react-native-easy-grid';
+import {material} from 'react-native-typography';
+import {Text} from 'react-native';
 
 const App = () => (
   <Grid>
@@ -18,7 +20,14 @@ const App = () => (
         Animatable
       </Animatable.Text>
     </Row>
-    <Row></Row>
+    <Row
+      style={{
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'deepskyblue',
+      }}>
+      <Text style={material.display2}>Hello Material!</Text>
+    </Row>
   </Grid>
 );
 
