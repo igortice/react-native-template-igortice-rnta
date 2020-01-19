@@ -1,3 +1,5 @@
 {
-  "axios": "latest"
+  "react-native-animatable": "latest",
+  "axios": "latest",
+  "react-native-easy-grid": "latest"
 }

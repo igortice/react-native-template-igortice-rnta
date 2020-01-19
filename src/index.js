@@ -1,10 +1,25 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import * as Animatable from 'react-native-animatable';
+import {Row, Grid} from 'react-native-easy-grid';
 
 const App = () => (
-  <View>
-    <Text>Init App</Text>
-  </View>
+  <Grid>
+    <Row
+      style={{
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'beige',
+      }}>
+      <Animatable.Text
+        animation="pulse"
+        easing="ease-out"
+        iterationCount="infinite"
+        style={{fontSize: 50}}>
+        Animatable
+      </Animatable.Text>
+    </Row>
+    <Row></Row>
+  </Grid>
 );
 
 export default App;
