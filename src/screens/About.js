@@ -1,18 +1,46 @@
-import {Button, Text, View} from 'react-native';
+import * as Animatable from 'react-native-animatable';
 
-import {Actions} from 'react-native-router-flux';
+import {Body, Container, Header, Text, Title} from 'native-base';
+import {Grid, Row} from 'react-native-easy-grid';
+
+import { Actions } from 'react-native-router-flux';
 import React from 'react';
 import {material} from 'react-native-typography';
 
-const About = () => {
-  return (
-    <View>
-      <Text style={[material.display3, {textAlign: 'center'}]}>
-        About Screen
-      </Text>
-      <Button onPress={() => Actions.home()} title={'Go to Home'} />
-    </View>
-  );
-};
+const Home = () => (
+  <Container>
+    <Header>
+      <Body>
+        <Title>Header</Title>
+      </Body>
+    </Header>
+    <Grid>
+      <Row
+        style={{
+          justifyContent: 'center',
+          alignItems: 'center',
+          backgroundColor: 'beige',
+        }}>
+        <Animatable.Text
+          animation="pulse"
+          easing="ease-out"
+          iterationCount="infinite"
+          style={{fontSize: 50}}>
+          About
+        </Animatable.Text>
+      </Row>
+      <Row
+        style={{
+          justifyContent: 'center',
+          alignItems: 'center',
+          backgroundColor: 'deepskyblue',
+        }}>
+        <Text onPress={() => Actions.home()} style={material.display2}>
+          Go Home! Click me.
+        </Text>
+      </Row>
+    </Grid>
+  </Container>
+);
 
-export default About;
+export default Home;
