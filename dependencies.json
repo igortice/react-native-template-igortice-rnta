@@ -2,5 +2,6 @@
   "react-native-animatable": "latest",
   "axios": "latest",
   "react-native-easy-grid": "latest",
+  "native-base": "latest",
   "react-native-typography": "latest"
 }
