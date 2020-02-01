@@ -1,7 +1,7 @@
 import {Router, Scene, Stack} from 'react-native-router-flux';
 
-import EasyGrid from '../screens/exemplos/EasyGrid';
-import Lista from '../screens/exemplos/Lista';
+import EasyGrid from '~/screens/exemplos/EasyGrid';
+import Lista from '~/screens/exemplos/Lista';
 import React from 'react';
 import TransitionConfig from './TransitionConfig';
 
