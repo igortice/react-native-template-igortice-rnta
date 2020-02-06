@@ -11,3 +11,5 @@ export const API_MOCK = axios.create({
   timeout: 5000,
   headers: {'content-type': 'application/json'},
 });
+
+export const API = API_MOCK;

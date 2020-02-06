@@ -33,6 +33,14 @@ const Lista = () => {
               <Icon active name="arrow-forward" />
             </Right>
           </ListItem>
+          <ListItem icon onPress={() => Actions.AxiosHooks()}>
+            <Body>
+              <Text>Axios Hooks</Text>
+            </Body>
+            <Right>
+              <Icon active name="arrow-forward" />
+            </Right>
+          </ListItem>
         </List>
       </Content>
     </Container>
