@@ -14,8 +14,11 @@ import {
 
 import {Actions} from 'react-native-router-flux';
 import React from 'react';
+import {useSelector} from 'react-redux';
 
 const Lista = () => {
+  const count = useSelector(state => state.counter.count);
+
   return (
     <Container style={{backgroundColor: 'beige'}}>
       <Header>
@@ -36,6 +39,14 @@ const Lista = () => {
           <ListItem icon onPress={() => Actions.AxiosHooks()}>
             <Body>
               <Text>Axios Hooks</Text>
+            </Body>
+            <Right>
+              <Icon active name="arrow-forward" />
+            </Right>
+          </ListItem>
+          <ListItem icon onPress={() => Actions.ReduxHooks()}>
+            <Body>
+              <Text>Redux Hooks Counter: {count}</Text>
             </Body>
             <Right>
               <Icon active name="arrow-forward" />

@@ -11,5 +11,7 @@
   "react-native-safe-area-context": "latest",
   "react-native-screens": "latest",
   "react-native-typography": "latest",
-  "react-native-webview": "latest"
+  "react-native-webview": "latest",
+  "react-redux": "latest",
+  "redux": "latest"
 }
