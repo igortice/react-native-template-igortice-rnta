@@ -11,13 +11,19 @@ import {
   Text,
   Title,
 } from 'native-base';
+import React, {useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 
 import {Actions} from 'react-native-router-flux';
-import React from 'react';
-import {useSelector} from 'react-redux';
+import {fetchGitHubProjects} from '~/store/actions/exemploAction';
 
 const Lista = () => {
-  const count = useSelector(state => state.counter.count);
+  const count = useSelector(state => state.exemplo.count);
+  let countProjetosGitHub = useSelector(state => state.exemplo.projetos.length);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchGitHubProjects('igortice'));
+  }, [dispatch]);
 
   return (
     <Container style={{backgroundColor: 'beige'}}>
@@ -47,6 +53,17 @@ const Lista = () => {
           <ListItem icon onPress={() => Actions.ReduxHooks()}>
             <Body>
               <Text>Redux Hooks Counter: {count}</Text>
+            </Body>
+            <Right>
+              <Icon active name="arrow-forward" />
+            </Right>
+          </ListItem>
+          <ListItem icon onPress={() => Actions.ReduxThunk()}>
+            <Body>
+              <Text>
+                Redux Thunk Projetos GitHub:{' '}
+                {countProjetosGitHub || 'aguarde...'}
+              </Text>
             </Body>
             <Right>
               <Icon active name="arrow-forward" />

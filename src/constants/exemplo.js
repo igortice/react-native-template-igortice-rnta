@@ -1,1 +1,2 @@
 export const COUNTER_CHANGE = 'COUNTER_CHANGE';
+export const FETCH_GITHUB = 'FETCH_GITHUB';

@@ -31,7 +31,7 @@ const reloadIcon = (
 );
 
 const ReduxHooks = () => {
-  const count = useSelector(state => state.counter.count);
+  const count = useSelector(state => state.exemplo.count);
   const dispatch = useDispatch();
   const handleAdd = () => {
     dispatch(changeCount(count + 1));
