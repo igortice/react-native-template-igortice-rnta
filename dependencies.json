@@ -13,5 +13,7 @@
   "react-native-typography": "latest",
   "react-native-webview": "latest",
   "react-redux": "latest",
-  "redux": "latest"
+  "redux": "latest",
+  "redux-devtools-extension": "latest",
+  "redux-thunk": "latest"
 }
