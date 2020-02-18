@@ -13,15 +13,14 @@ import {
   Title,
 } from 'native-base';
 
-import {Actions} from 'react-native-router-flux';
 import React from 'react';
 
-const EasyGrid = () => {
+const EasyGrid = ({navigation}) => {
   return (
     <Container>
       <Header>
         <Left>
-          <Button transparent onPress={() => Actions.Lista()}>
+          <Button transparent onPress={() => navigation.goBack()}>
             <Icon name="arrow-back" />
           </Button>
         </Left>

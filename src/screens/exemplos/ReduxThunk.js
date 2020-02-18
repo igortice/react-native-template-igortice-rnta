@@ -16,7 +16,6 @@ import {
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 
-import {Actions} from 'react-native-router-flux';
 import LoadContentList from '~/utils/LoadContentList';
 import {fetchGitHubProjects} from '~/store/actions/exemploAction';
 
@@ -41,9 +40,11 @@ const MyContent = ({lista}) => (
   </List>
 );
 
-const ReduxThunk = () => {
+const ReduxThunk = ({navigation}) => {
   const myGitHubProjectsLista = useSelector(state => state.exemplo.projetos);
+
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(fetchGitHubProjects('igortice'));
   }, [dispatch]);
@@ -52,7 +53,7 @@ const ReduxThunk = () => {
     <Container style={{backgroundColor: 'beige'}}>
       <Header>
         <Left>
-          <Button transparent onPress={() => Actions.Lista()}>
+          <Button transparent onPress={() => navigation.goBack()}>
             <Icon name="arrow-back" />
           </Button>
         </Left>

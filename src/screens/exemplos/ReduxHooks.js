@@ -16,7 +16,6 @@ import {
 import {human, material} from 'react-native-typography';
 import {useDispatch, useSelector} from 'react-redux';
 
-import {Actions} from 'react-native-router-flux';
 import React from 'react';
 import {changeCount} from '~/store/actions/exemploAction';
 
@@ -30,17 +29,21 @@ const reloadIcon = (
   <Icon name="ios-refresh" style={{fontSize: 30, color: 'gray'}} />
 );
 
-const ReduxHooks = () => {
+const ReduxHooks = ({navigation}) => {
   const count = useSelector(state => state.exemplo.count);
+
   const dispatch = useDispatch();
+
   const handleAdd = () => {
     dispatch(changeCount(count + 1));
   };
+
   const handleRemove = () => {
     if (count > 0) {
       dispatch(changeCount(count - 1));
     }
   };
+
   const handleReload = () => {
     if (count > 0) {
       dispatch(changeCount(0));
@@ -51,7 +54,7 @@ const ReduxHooks = () => {
     <Container style={{backgroundColor: 'beige'}}>
       <Header>
         <Left>
-          <Button transparent onPress={() => Actions.Lista()}>
+          <Button transparent onPress={() => navigation.goBack()}>
             <Icon name="arrow-back" />
           </Button>
         </Left>

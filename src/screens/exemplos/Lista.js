@@ -14,13 +14,14 @@ import {
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 
-import {Actions} from 'react-native-router-flux';
 import {fetchGitHubProjects} from '~/store/actions/exemploAction';
 
-const Lista = () => {
+const Lista = ({navigation}) => {
   const count = useSelector(state => state.exemplo.count);
   let countProjetosGitHub = useSelector(state => state.exemplo.projetos.length);
+
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(fetchGitHubProjects('igortice'));
   }, [dispatch]);
@@ -34,7 +35,7 @@ const Lista = () => {
       </Header>
       <Content>
         <List>
-          <ListItem icon onPress={() => Actions.EasyGrid()}>
+          <ListItem icon onPress={() => navigation.navigate('EasyGrid')}>
             <Body>
               <Text>Easy Grid</Text>
             </Body>
@@ -42,7 +43,7 @@ const Lista = () => {
               <Icon active name="arrow-forward" />
             </Right>
           </ListItem>
-          <ListItem icon onPress={() => Actions.AxiosHooks()}>
+          <ListItem icon onPress={() => navigation.navigate('AxiosHooks')}>
             <Body>
               <Text>Axios Hooks</Text>
             </Body>
@@ -50,7 +51,7 @@ const Lista = () => {
               <Icon active name="arrow-forward" />
             </Right>
           </ListItem>
-          <ListItem icon onPress={() => Actions.ReduxHooks()}>
+          <ListItem icon onPress={() => navigation.navigate('ReduxHooks')}>
             <Body>
               <Text>Redux Hooks Counter: {count}</Text>
             </Body>
@@ -58,7 +59,7 @@ const Lista = () => {
               <Icon active name="arrow-forward" />
             </Right>
           </ListItem>
-          <ListItem icon onPress={() => Actions.ReduxThunk()}>
+          <ListItem icon onPress={() => navigation.navigate('ReduxThunk')}>
             <Body>
               <Text>
                 Redux Thunk Projetos GitHub:{' '}

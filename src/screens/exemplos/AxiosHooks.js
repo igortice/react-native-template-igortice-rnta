@@ -15,7 +15,6 @@ import {
 } from 'native-base';
 
 import {API} from '~/configs/Api';
-import {Actions} from 'react-native-router-flux';
 import LoadContentList from '~/utils/LoadContentList';
 import React from 'react';
 import {makeUseAxios} from 'axios-hooks';
@@ -31,7 +30,7 @@ const MyList = ({lista}) =>
     </ListItem>
   ));
 
-const AxiosHooks = () => {
+const AxiosHooks = ({navigation}) => {
   const [{data, loading}] = useAxios('/list_colors');
 
   const MyContent = () => (
@@ -50,7 +49,7 @@ const AxiosHooks = () => {
     <Container style={{backgroundColor: 'beige'}}>
       <Header>
         <Left>
-          <Button transparent onPress={() => Actions.Lista()}>
+          <Button transparent onPress={() => navigation.goBack()}>
             <Icon name="arrow-back" />
           </Button>
         </Left>

@@ -1,23 +1,28 @@
-import {Router, Scene, Stack} from 'react-native-router-flux';
+import * as React from 'react';
 
 import AxiosHooks from '~/screens/exemplos/AxiosHooks';
 import EasyGrid from '~/screens/exemplos/EasyGrid';
 import Lista from '~/screens/exemplos/Lista';
-import React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
 import ReduxHooks from '~/screens/exemplos/ReduxHooks';
 import ReduxThunk from '~/screens/exemplos/ReduxThunk';
-import TransitionConfig from './TransitionConfig';
+import {createStackNavigator} from '@react-navigation/stack';
+
+const Stack = createStackNavigator();
 
 const Routes = () => (
-  <Router>
-    <Stack key={'root'} hideNavBar transitionConfig={TransitionConfig}>
-      <Scene key={'Lista'} component={Lista} title={'Lista'} />
-      <Scene key={'EasyGrid'} component={EasyGrid} title={'Easy Grid'} />
-      <Scene key={'AxiosHooks'} component={AxiosHooks} title={'Axios Hooks'} />
-      <Scene key={'ReduxHooks'} component={ReduxHooks} title={'Redux Hooks'} />
-      <Scene key={'ReduxThunk'} component={ReduxThunk} title={'Redux Thunk'} />
-    </Stack>
-  </Router>
+  <NavigationContainer>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
+      <Stack.Screen name="Lista" component={Lista} />
+      <Stack.Screen name="EasyGrid" component={EasyGrid} />
+      <Stack.Screen name="AxiosHooks" component={AxiosHooks} />
+      <Stack.Screen name="ReduxHooks" component={ReduxHooks} />
+      <Stack.Screen name="ReduxThunk" component={ReduxThunk} />
+    </Stack.Navigator>
+  </NavigationContainer>
 );
 
 export default Routes;
