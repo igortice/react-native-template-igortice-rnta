@@ -1,27 +1,18 @@
 import * as React from 'react';
 
-import AxiosHooks from '~/screens/exemplos/AxiosHooks';
-import EasyGrid from '~/screens/exemplos/EasyGrid';
-import Lista from '~/screens/exemplos/Lista';
+import MainRoute from './MainRoute';
+import ModalRoute from './ModalRoute';
 import {NavigationContainer} from '@react-navigation/native';
-import ReduxHooks from '~/screens/exemplos/ReduxHooks';
-import ReduxThunk from '~/screens/exemplos/ReduxThunk';
 import {createStackNavigator} from '@react-navigation/stack';
 
-const Stack = createStackNavigator();
+const RootStack = createStackNavigator();
 
 const Routes = () => (
   <NavigationContainer>
-    <Stack.Navigator
-      screenOptions={{
-        headerShown: false,
-      }}>
-      <Stack.Screen name="Lista" component={Lista} />
-      <Stack.Screen name="EasyGrid" component={EasyGrid} />
-      <Stack.Screen name="AxiosHooks" component={AxiosHooks} />
-      <Stack.Screen name="ReduxHooks" component={ReduxHooks} />
-      <Stack.Screen name="ReduxThunk" component={ReduxThunk} />
-    </Stack.Navigator>
+    <RootStack.Navigator mode="modal" headerMode="none">
+      <RootStack.Screen name="Main" component={MainRoute} />
+      <RootStack.Screen name="Modal" component={ModalRoute} />
+    </RootStack.Navigator>
   </NavigationContainer>
 );
 

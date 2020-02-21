@@ -70,6 +70,14 @@ const Lista = ({navigation}) => {
               <Icon active name="arrow-forward" />
             </Right>
           </ListItem>
+          <ListItem icon onPress={() => navigation.navigate('Modal')}>
+            <Body>
+              <Text>Modal Full Screen</Text>
+            </Body>
+            <Right>
+              <Icon active name="arrow-forward" />
+            </Right>
+          </ListItem>
         </List>
       </Content>
     </Container>
