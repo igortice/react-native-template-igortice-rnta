@@ -1,14 +1,27 @@
 /* eslint-disable react-native/no-inline-styles */
 
-import {Button, Text, View, StatusBar} from 'react-native';
+import {Button, View, StatusBar} from 'react-native';
+import LottieView from 'lottie-react-native';
 
 import React from 'react';
 
 const ModalRoute = ({navigation}) => (
-  <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+  <View
+    style={{
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: '#adff2f',
+    }}>
     <StatusBar hidden={true} />
-    <Text style={{fontSize: 30}}>This is a modal!</Text>
-    <Button onPress={() => navigation.goBack()} title="Dismiss" />
+    <LottieView
+      source={require('~/assets/animations/success.json')}
+      autoPlay={true}
+      loop={false}
+      autoSize={true}
+      speed={0.8}
+      onAnimationFinish={() => navigation.goBack()}
+    />
   </View>
 );
 
