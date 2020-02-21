@@ -1,6 +1,5 @@
 import ContentLoader, {Circle, Rect} from 'react-content-loader/native';
 
-import {ListItem} from 'native-base';
 import React from 'react';
 
 const LoadContentList = () => {

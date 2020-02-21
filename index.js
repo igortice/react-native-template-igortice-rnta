@@ -8,6 +8,7 @@ import {name as appName} from './app.json';
 import configureStore from '~/store/configureStore';
 
 const store = configureStore();
+
 const appRedux = () => (
   <Provider store={store}>
     <App />

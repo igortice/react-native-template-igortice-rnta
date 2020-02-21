@@ -17,7 +17,6 @@ import {human, material} from 'react-native-typography';
 import {useDispatch, useSelector} from 'react-redux';
 
 import React from 'react';
-import {changeCount} from '~/store/actions/exemploAction';
 
 const addIcon = (
   <Icon name="add-circle" style={{fontSize: 35, color: 'green'}} />
@@ -35,18 +34,18 @@ const ReduxHooks = ({navigation}) => {
   const dispatch = useDispatch();
 
   const handleAdd = () => {
-    dispatch(changeCount(count + 1));
+    dispatch({type: 'changeCount', count: count + 1});
   };
 
   const handleRemove = () => {
     if (count > 0) {
-      dispatch(changeCount(count - 1));
+      dispatch({type: 'changeCount', count: count - 1});
     }
   };
 
   const handleReload = () => {
     if (count > 0) {
-      dispatch(changeCount(0));
+      dispatch({type: 'changeCount', count: 0});
     }
   };
 

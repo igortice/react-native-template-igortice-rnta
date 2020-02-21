@@ -14,8 +14,6 @@ import {
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 
-import {fetchGitHubProjects} from '~/store/actions/exemploAction';
-
 const Lista = ({navigation}) => {
   const count = useSelector(state => state.exemplo.count);
   let countProjetosGitHub = useSelector(state => state.exemplo.projetos.length);
@@ -23,7 +21,7 @@ const Lista = ({navigation}) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchGitHubProjects('igortice'));
+    dispatch({type: 'fetchGitHub', username: 'igortice'});
   }, [dispatch]);
 
   return (

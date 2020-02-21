@@ -14,5 +14,7 @@
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0-alpha02'
     ```
 - [React Redux](https://github.com/reduxjs/react-redux) - React Redux State
-- [Redux Thunk](https://github.com/reduxjs/redux-thunk) - Redux Thunk Actions Synchronous
+- [Redux Saga](https://redux-saga.js.org/) - Redux Application Side Effects
 - [Typography](https://github.com/hectahertz/react-native-typography) - Styles Fonts
+- [Lottie React Native](https://github.com/react-native-community/lottie-react-native) - Animations JSON
+  - show important install por IOS and ANDROID

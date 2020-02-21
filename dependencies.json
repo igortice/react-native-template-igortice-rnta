@@ -19,5 +19,5 @@
   "react-redux": "latest",
   "redux": "latest",
   "redux-devtools-extension": "latest",
-  "redux-thunk": "latest"
+  "redux-saga": "latest"
 }

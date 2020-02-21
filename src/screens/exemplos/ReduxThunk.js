@@ -17,7 +17,6 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 
 import LoadContentList from '~/utils/LoadContentList';
-import {fetchGitHubProjects} from '~/store/actions/exemploAction';
 
 const MyList = ({lista}) =>
   lista.map(ele => (
@@ -46,7 +45,7 @@ const ReduxThunk = ({navigation}) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchGitHubProjects('igortice'));
+    dispatch({type: 'fetchGitHub', username: 'igortice'});
   }, [dispatch]);
 
   return (
