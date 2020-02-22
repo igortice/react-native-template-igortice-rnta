@@ -15,6 +15,13 @@
     ```
 - [React Redux](https://github.com/reduxjs/react-redux) - React Redux State
 - [Redux Saga](https://redux-saga.js.org/) - Redux Application Side Effects
+- [Redux Persist](https://github.com/rt2zz/redux-persist) - Persist and rehydrate a redux store
 - [Typography](https://github.com/hectahertz/react-native-typography) - Styles Fonts
 - [Lottie React Native](https://github.com/react-native-community/lottie-react-native) - Animations JSON
-  - show important install por IOS and ANDROID
+  - ios/Podfile : add
+    ```
+    platform :ios, '9.0'
+    use_frameworks!
+    inhibit_all_warnings!
+    ```
+  - show install ANDROID in github version React Native > 0.60

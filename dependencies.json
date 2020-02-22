@@ -2,6 +2,7 @@
   "axios": "latest",
   "axios-hooks": "latest",
   "native-base": "latest",
+  "@react-native-community/async-storage": "latest",
   "@react-native-community/masked-view": "latest",
   "@react-navigation/native": "latest",
   "@react-navigation/stack": "latest",
@@ -19,5 +20,6 @@
   "react-redux": "latest",
   "redux": "latest",
   "redux-devtools-extension": "latest",
-  "redux-saga": "latest"
+  "redux-saga": "latest",
+  "redux-persist": "latest"
 }

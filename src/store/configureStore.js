@@ -1,23 +1,33 @@
-import {applyMiddleware, combineReducers, createStore} from 'redux';
+import {applyMiddleware, createStore} from 'redux';
+import {persistReducer, persistStore} from 'redux-persist';
 
+import AsyncStorage from '@react-native-community/async-storage';
 import {composeWithDevTools} from 'redux-devtools-extension';
 import createSagaMiddleware from 'redux-saga';
-import exemploReducer from './reducers/exemploReducer';
+import rootReducer from './reducers/rootReducer';
 import rootSaga from './sagas/rootSaga';
 
 const sagaMiddleware = createSagaMiddleware();
 
-const rootReducer = combineReducers({exemplo: exemploReducer});
-
-const configureStore = () => {
-  const store = createStore(
-    rootReducer,
-    composeWithDevTools(applyMiddleware(sagaMiddleware)),
-  );
-
-  sagaMiddleware.run(rootSaga);
-
-  return store;
+const persistConfig = {
+  key: 'root',
+  storage: AsyncStorage,
+  whitelist: [],
+  blacklist: [],
 };
 
-export default configureStore;
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+const store = createStore(
+  persistedReducer,
+  composeWithDevTools(applyMiddleware(sagaMiddleware)),
+);
+
+const persistor = persistStore(store);
+
+sagaMiddleware.run(rootSaga);
+
+// clear all stores
+// persistor.purge();
+
+export {store, persistor};
