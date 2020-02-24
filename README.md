@@ -16,6 +16,12 @@
 - [React Redux](https://github.com/reduxjs/react-redux) - React Redux State
 - [Redux Saga](https://redux-saga.js.org/) - Redux Application Side Effects
 - [Redux Persist](https://github.com/rt2zz/redux-persist) - Persist and rehydrate a redux store
+- [Redux Persist FS](https://github.com/robwalkerco/redux-persist-filesystem-storage) - Persist Storage Adaptor
+- [React Native Fetch Blob](https://github.com/joltup/rn-fetch-blob) - File Access
+  - ios/Podfile : add
+    ```
+    pod 'rn-fetch-blob', :path => '../node_modules/rn-fetch-blob'
+    ```
 - [Typography](https://github.com/hectahertz/react-native-typography) - Styles Fonts
 - [Lottie React Native](https://github.com/react-native-community/lottie-react-native) - Animations JSON
   - ios/Podfile : add

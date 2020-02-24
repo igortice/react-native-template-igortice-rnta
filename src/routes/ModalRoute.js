@@ -19,7 +19,7 @@ const ModalRoute = ({navigation}) => (
       autoPlay={true}
       loop={false}
       autoSize={true}
-      speed={0.8}
+      speed={0.6}
       onAnimationFinish={() => navigation.goBack()}
     />
   </View>

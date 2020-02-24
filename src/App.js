@@ -8,7 +8,9 @@ import Routes from './routes';
 
 export default () => (
   <Provider store={store}>
-    <PersistGate loading={<Loading />} persistor={persistor}>
+    <PersistGate
+      loading={<Loading texto={'Carregando...'} />}
+      persistor={persistor}>
       <Routes />
     </PersistGate>
   </Provider>
