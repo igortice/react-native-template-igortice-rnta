@@ -1,4 +1,4 @@
-import {COUNTER_CHANGE, FETCH_GITHUB} from '~/constants/exemplo';
+import {COUNTER_CHANGE, FETCH_GITHUB, LOGIN_CHANGE} from '~/constants/exemplo';
 import {all, call, put, takeEvery, takeLatest} from 'redux-saga/effects';
 
 import GitHubService from '~/services/exemplo/GitHubService';
@@ -8,6 +8,14 @@ import Sleep from '~/utils/Sleep';
 function* changeCount({count}) {
   try {
     yield put({type: COUNTER_CHANGE, payload: count});
+  } catch (e) {
+    yield put({type: 'SET_COUNT_FAILED', message: e.message});
+  }
+}
+
+function* login({payload}) {
+  try {
+    yield put({type: LOGIN_CHANGE, payload});
   } catch (e) {
     yield put({type: 'SET_COUNT_FAILED', message: e.message});
   }
@@ -35,6 +43,7 @@ function* exemploSaga() {
   yield all([
     takeLatest('fetchGitHub', fetchGitHub),
     takeEvery('changeCount', changeCount),
+    takeEvery('login', login),
   ]);
 }
 

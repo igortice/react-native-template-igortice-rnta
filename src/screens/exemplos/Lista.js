@@ -76,6 +76,14 @@ const Lista = ({navigation}) => {
               <Icon active name="arrow-forward" />
             </Right>
           </ListItem>
+          <ListItem icon onPress={() => navigation.navigate('Formulario')}>
+            <Body>
+              <Text>Formik</Text>
+            </Body>
+            <Right>
+              <Icon active name="arrow-forward" />
+            </Right>
+          </ListItem>
         </List>
       </Content>
     </Container>

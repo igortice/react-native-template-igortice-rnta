@@ -1,5 +1,6 @@
 import AxiosHooks from '~/screens/exemplos/AxiosHooks';
 import EasyGrid from '~/screens/exemplos/EasyGrid';
+import Formulario from '~/screens/exemplos/Formulario';
 import Lista from '~/screens/exemplos/Lista';
 import React from 'react';
 import ReduxHooks from '~/screens/exemplos/ReduxHooks';
@@ -18,6 +19,7 @@ const MainRoute = () => (
     <MainStack.Screen name="AxiosHooks" component={AxiosHooks} />
     <MainStack.Screen name="ReduxHooks" component={ReduxHooks} />
     <MainStack.Screen name="ReduxThunk" component={ReduxThunk} />
+    <MainStack.Screen name="Formulario" component={Formulario} />
   </MainStack.Navigator>
 );
 

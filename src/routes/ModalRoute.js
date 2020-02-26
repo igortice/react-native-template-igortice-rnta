@@ -2,8 +2,8 @@
 
 import {StatusBar, View} from 'react-native';
 
-import LottieView from 'lottie-react-native';
 import React from 'react';
+import Success from '~/components/LottieView/Success';
 
 const ModalRoute = ({navigation}) => (
   <View
@@ -13,15 +13,7 @@ const ModalRoute = ({navigation}) => (
       justifyContent: 'center',
       backgroundColor: '#adff2f',
     }}>
-    <StatusBar hidden={true} />
-    <LottieView
-      source={require('~/assets/animations/success.json')}
-      autoPlay={true}
-      loop={false}
-      autoSize={true}
-      speed={0.6}
-      onAnimationFinish={() => navigation.goBack()}
-    />
+    <Success goTo={() => navigation.navigate('Lista')} />
   </View>
 );
 

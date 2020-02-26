@@ -7,6 +7,7 @@
 - [Content Loader](https://github.com/danilowoz/react-content-loader) - Placeholder Loadings
 - [Easy Grid](https://github.com/GeekyAnts/react-native-easy-grid) - Flexbox Grid
 - [Native Base](https://github.com/GeekyAnts/NativeBase) - Framework UI
+- [Formik](https://jaredpalmer.com/formik/docs/overview) - Formulários
 - [React Navigation](https://reactnavigation.org/docs/en/getting-started.html) - Routes
   - android/app/build.gradle : dependencies
     ```
@@ -31,3 +32,4 @@
     inhibit_all_warnings!
     ```
   - show install ANDROID in github version React Native > 0.60
+- [Yup](https://github.com/jquense/yup) - Scheme Object Validation
