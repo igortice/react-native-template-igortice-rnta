@@ -19,6 +19,7 @@ import {
 } from 'native-base';
 import {useDispatch, useSelector} from 'react-redux';
 
+import {ExemploCreators} from '~/store/ducks/exemploDuck';
 import {Formik} from 'formik';
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
@@ -43,8 +44,9 @@ const FormLogin = () => {
       enableReinitialize={true}
       validationSchema={LoginSchema}
       onSubmit={values => {
-        dispatch({type: 'login', payload: values});
-        navigation.navigate('Modal');
+        dispatch(ExemploCreators.fetchLogin(values)).then(_ =>
+          navigation.navigate('Modal'),
+        );
       }}>
       {({handleChange, handleBlur, handleSubmit, values, errors}) => (
         <Form>

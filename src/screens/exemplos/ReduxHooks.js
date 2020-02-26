@@ -16,6 +16,7 @@ import {
 import {human, material} from 'react-native-typography';
 import {useDispatch, useSelector} from 'react-redux';
 
+import {ExemploCreators} from '~/store/ducks/exemploDuck';
 import React from 'react';
 
 const addIcon = (
@@ -34,18 +35,18 @@ const ReduxHooks = ({navigation}) => {
   const dispatch = useDispatch();
 
   const handleAdd = () => {
-    dispatch({type: 'changeCount', count: count + 1});
+    dispatch(ExemploCreators.fetchCounter(count + 1));
   };
 
   const handleRemove = () => {
     if (count > 0) {
-      dispatch({type: 'changeCount', count: count - 1});
+      dispatch(ExemploCreators.fetchCounter(count - 1));
     }
   };
 
   const handleReload = () => {
     if (count > 0) {
-      dispatch({type: 'changeCount', count: 0});
+      dispatch(ExemploCreators.fetchCounter(0));
     }
   };
 

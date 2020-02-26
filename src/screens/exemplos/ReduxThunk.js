@@ -16,6 +16,7 @@ import {
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 
+import {ExemploCreators} from '~/store/ducks/exemploDuck';
 import LoadContentList from '~/utils/LoadContentList';
 
 const MyList = ({lista}) =>
@@ -45,7 +46,7 @@ const ReduxThunk = ({navigation}) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch({type: 'fetchGitHub', username: 'igortice'});
+    dispatch(ExemploCreators.fetchGitHub('igortice'));
   }, [dispatch]);
 
   return (

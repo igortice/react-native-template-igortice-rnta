@@ -1,9 +1,8 @@
 /* eslint-disable react-native/no-inline-styles */
 
-import {StatusBar, View} from 'react-native';
-
 import React from 'react';
 import Success from '~/components/LottieView/Success';
+import {View} from 'react-native';
 
 const ModalRoute = ({navigation}) => (
   <View

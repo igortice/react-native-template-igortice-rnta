@@ -20,7 +20,7 @@
   "react-redux": "latest",
   "redux": "latest",
   "redux-devtools-extension": "latest",
-  "redux-saga": "latest",
+  "redux-thunk": "latest",
   "redux-persist-filesystem-storage": "latest",
   "rn-fetch-blob": "latest",
   "redux-persist": "latest",

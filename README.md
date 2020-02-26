@@ -15,7 +15,7 @@
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0-alpha02'
     ```
 - [React Redux](https://github.com/reduxjs/react-redux) - React Redux State
-- [Redux Saga](https://redux-saga.js.org/) - Redux Application Side Effects
+- [Redux Thunk](https://github.com/reduxjs/redux-thunk) - Redux Application Async Dispatch
 - [Redux Persist](https://github.com/rt2zz/redux-persist) - Persist and rehydrate a redux store
 - [Redux Persist FS](https://github.com/robwalkerco/redux-persist-filesystem-storage) - Persist Storage Adaptor
 - [React Native Fetch Blob](https://github.com/joltup/rn-fetch-blob) - File Access
