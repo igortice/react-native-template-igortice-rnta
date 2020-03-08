@@ -14,14 +14,15 @@ import {
   Label,
   Left,
   Right,
+  Spinner,
   Text,
   Title,
 } from 'native-base';
+import React, {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 
-import {ExemploCreators} from '~/store/ducks/exemploDuck';
+import {ExemploActions} from '~/store/ducks/exemploDuck';
 import {Formik} from 'formik';
-import React from 'react';
 import {useNavigation} from '@react-navigation/native';
 
 const LoginSchema = Yup.object().shape({
@@ -34,6 +35,7 @@ const LoginSchema = Yup.object().shape({
 });
 
 const FormLogin = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const initialValues = useSelector(state => state.exemplo.login);
   const dispatch = useDispatch();
   const navigation = useNavigation();
@@ -44,9 +46,13 @@ const FormLogin = () => {
       enableReinitialize={true}
       validationSchema={LoginSchema}
       onSubmit={values => {
-        dispatch(ExemploCreators.fetchLogin(values)).then(_ =>
-          navigation.navigate('Modal'),
-        );
+        const submitLogin = async () => {
+          setIsLoading(true);
+          await dispatch(ExemploActions.fetchLogin(values));
+          setIsLoading(false);
+        };
+
+        submitLogin().then(_ => navigation.navigate('Modal'));
       }}>
       {({handleChange, handleBlur, handleSubmit, values, errors}) => (
         <Form>
@@ -70,8 +76,12 @@ const FormLogin = () => {
             />
             {errors.password ? <Icon name="close-circle" /> : null}
           </Item>
-          <Button onPress={handleSubmit} style={{marginTop: 30}} block>
-            <Text>Enviar</Text>
+          <Button
+            onPress={handleSubmit}
+            style={{marginTop: 30}}
+            block
+            disabled={isLoading}>
+            {isLoading ? <Spinner color="gray" /> : <Text>Enviar</Text>}
           </Button>
         </Form>
       )}

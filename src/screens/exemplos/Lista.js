@@ -14,7 +14,7 @@ import {
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 
-import {ExemploCreators} from '~/store/ducks/exemploDuck';
+import {ExemploActions} from '~/store/ducks/exemploDuck';
 
 const Lista = ({navigation}) => {
   const count = useSelector(state => state.exemplo.count);
@@ -23,7 +23,7 @@ const Lista = ({navigation}) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(ExemploCreators.fetchGitHub('igortice'));
+    dispatch(ExemploActions.fetchGitHub('igortice'));
   }, [dispatch]);
 
   return (

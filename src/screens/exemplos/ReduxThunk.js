@@ -13,10 +13,10 @@ import {
   Text,
   Title,
 } from 'native-base';
-import React, {useEffect} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 
-import {ExemploCreators} from '~/store/ducks/exemploDuck';
+import {ExemploActions} from '~/store/ducks/exemploDuck';
 import LoadContentList from '~/utils/LoadContentList';
 
 const MyList = ({lista}) =>
@@ -28,9 +28,9 @@ const MyList = ({lista}) =>
     </ListItem>
   ));
 
-const MyContent = ({lista}) => (
+const MyContent = ({isLoading, lista}) => (
   <List>
-    {lista.length === 0 ? (
+    {isLoading ? (
       <ListItem>
         <LoadContentList />
       </ListItem>
@@ -41,13 +41,21 @@ const MyContent = ({lista}) => (
 );
 
 const ReduxThunk = ({navigation}) => {
+  const [isLoading, setIsLoading] = useState(false);
   const myGitHubProjectsLista = useSelector(state => state.exemplo.projetos);
-
   const dispatch = useDispatch();
 
+  const loadGitHub = useCallback(async () => {
+    setIsLoading(true);
+    await dispatch(ExemploActions.fetchGitHub('igortice'));
+    setIsLoading(false);
+  }, [setIsLoading, dispatch]);
+
   useEffect(() => {
-    dispatch(ExemploCreators.fetchGitHub('igortice'));
-  }, [dispatch]);
+    const onFocus = navigation.addListener('focus', () => loadGitHub());
+
+    return () => onFocus();
+  }, [navigation, loadGitHub]);
 
   return (
     <Container style={{backgroundColor: 'beige'}}>
@@ -63,7 +71,7 @@ const ReduxThunk = ({navigation}) => {
         <Right />
       </Header>
       <Content>
-        <MyContent lista={myGitHubProjectsLista} />
+        <MyContent isLoading={isLoading} lista={myGitHubProjectsLista} />
       </Content>
     </Container>
   );

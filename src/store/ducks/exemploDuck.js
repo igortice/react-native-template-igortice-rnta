@@ -1,5 +1,6 @@
 import GitHubService from '~/services/exemplo/GitHubService';
 import ProjetoModel from '~/models/exemplo/ProjetoModel';
+import Sleep from '~/utils/Sleep';
 
 export const TYPES = {
   FETCH_COUNTER: 'FETCH_COUNTER',
@@ -26,24 +27,23 @@ export default (state = initialState, {type, payload}) => {
   }
 };
 
-export const ExemploCreators = {
+export const ExemploActions = {
   fetchCounter: payload => dispatch =>
     dispatch({type: TYPES.FETCH_COUNTER, payload}),
 
   fetchLogin: payload => async dispatch => {
-    dispatch({type: TYPES.FETCH_LOGIN, payload});
+    await Sleep(2000);
 
-    return true;
+    dispatch({type: TYPES.FETCH_LOGIN, payload});
   },
 
   fetchGitHub: username => async dispatch => {
     try {
       const response = await GitHubService.myRepo(username);
-
       const payload = filterData(response.data);
-      dispatch({type: TYPES.FETCH_GITHUB, payload});
+      await Sleep(1000);
 
-      return response;
+      dispatch({type: TYPES.FETCH_GITHUB, payload});
     } catch (error) {
       console.log(error);
     }
