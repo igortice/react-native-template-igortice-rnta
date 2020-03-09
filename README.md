@@ -33,3 +33,5 @@
     ```
   - show install ANDROID in github version React Native > 0.60
 - [Yup](https://github.com/jquense/yup) - Scheme Object Validation
+- [Vector Icons](https://github.com/oblador/react-native-vector-icons) - Custom Icons
+  - show install ANDROID and IOS in github version React Native > 0.60

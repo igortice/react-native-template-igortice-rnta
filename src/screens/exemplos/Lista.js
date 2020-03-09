@@ -86,6 +86,14 @@ const Lista = ({navigation}) => {
               <Icon active name="arrow-forward" />
             </Right>
           </ListItem>
+          <ListItem icon onPress={() => navigation.navigate('VetorIcons')}>
+            <Body>
+              <Text>Vetor Icons</Text>
+            </Body>
+            <Right>
+              <Icon active name="arrow-forward" />
+            </Right>
+          </ListItem>
         </List>
       </Content>
     </Container>
